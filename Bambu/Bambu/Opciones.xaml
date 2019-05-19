@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bambu.Opciones"
+             Title="Datos de Sistema">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label
+                Margin="35"/>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout 
+                    Orientation="Vertical" 
+                    HorizontalOptions="StartAndExpand"
+                    Margin="10">
+                        <Label FontSize="35" Text="Humedad"/>
+                        <Label FontSize="35" Text="Caudal"/>
+                        <Label FontSize="35" Text="Temperatura"/>
+                </StackLayout>
+                
+                <StackLayout
+                    Orientation="Vertical"
+                    HorizontalOptions="CenterAndExpand"
+                    Margin="10"
+                    >
+                    <StackLayout Orientation="Horizontal">
+                        <Label FontSize="20" 
+                         HorizontalOptions="FillAndExpand"
+                         Text="{Binding Id}"/>
+                        <Label FontSize="20"
+                         HorizontalOptions="FillAndExpand"
+                         Text="{Binding Agua}"/>
+                        <Label FontSize="20"
+                         HorizontalOptions="FillAndExpand"
+                         Text="{Binding Caudal}"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            <Label
+                Margin="35"/>
+            <StackLayout Orientation="Vertical">
+                <StackLayout>
+                    <Label 
+                        HorizontalOptions="Center"
+                        FontSize="20"
+                        Text="APERTURA LLAVE PRINCIPAL"/>
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal">
+                    <Button 
+                        HorizontalOptions="FillAndExpand"
+                        Text="Abrir"
+                        BackgroundColor="Green"
+                        TextColor="White"
+                        BorderRadius="23"
+                        Margin="10"/>
+                    <Button 
+                        HorizontalOptions="FillAndExpand"
+                        Text="Cerrar"
+                        BackgroundColor="SaddleBrown"
+                        TextColor="White"
+                        BorderRadius="23"
+                        Margin="10"/>
+                </StackLayout>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

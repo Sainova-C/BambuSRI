@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bambu.RegistroUsers">
+    
+        <ContentPage.Content>
+        <ScrollView>
+            <StackLayout 
+            Orientation="Vertical"
+            Margin="5"
+            Padding="2"
+            HorizontalOptions="FillAndExpand">
+                <Label 
+                Text="Nombre de Usuario"
+                TextColor="Black"
+                HorizontalOptions="FillAndExpand"
+                FontSize="Default"
+                />
+                <Entry 
+                Placeholder="Su nombre"/>
+
+                <Label 
+                Text="Correo"
+                TextColor="Black"
+                HorizontalOptions="FillAndExpand"
+                FontSize="Default"
+                />
+                <Entry 
+                Placeholder="Su E-mail"/>
+
+                <Label 
+                Text="Numero Telefono"
+                TextColor="Black"
+                HorizontalOptions="FillAndExpand"
+                FontSize="Default"
+                />
+                <Entry 
+                Placeholder="Contacto"/>
+
+                <Label 
+                Text="Tipo de sistema"
+                TextColor="Black"
+                HorizontalOptions="FillAndExpand"
+                FontSize="Default"
+                />
+                <Entry 
+                Placeholder="Sistema a utilizar"/>
+
+                <Label 
+                Text="Numero de valvulas"
+                TextColor="Black"
+                HorizontalOptions="FillAndExpand"
+                FontSize="Default"
+                />
+                <Entry 
+                Placeholder="cantidad"/>
+
+                <Label 
+                Text="ID de su sistema de riego"
+                TextColor="Black"
+                HorizontalOptions="FillAndExpand"
+                FontSize="Default"
+                />
+                <Entry 
+                Placeholder="Coloque el Nº de serie que biene con el producto"/>
+                <Label 
+                Margin="15"/>
+                <Button
+                    Text="Registrarse"
+                    BackgroundColor="Green"
+                    BorderRadius="25"
+                    Padding="2"
+                    HorizontalOptions="FillAndExpand"
+                    TextColor="White"
+                    Margin="15"
+                    x:Name="btn_Registrar"
+                    Clicked="Btn_Registrar_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

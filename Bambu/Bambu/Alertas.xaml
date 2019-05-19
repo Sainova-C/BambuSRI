@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bambu.Alertas"
+             Title="Estado Valvulas">
+    <StackLayout Orientation="Vertical">
+        <StackLayout 
+            Orientation="Horizontal"
+            Padding="12">
+            <Label
+                 HorizontalOptions="FillAndExpand"
+                 FontSize="20"
+                 FontAttributes="Bold">Nº Valvula</Label>
+            <Label
+                 HorizontalOptions="FillAndExpand"
+                 FontSize="20"
+                 FontAttributes="Bold">Caudal</Label>
+            <Label
+                 HorizontalOptions="FillAndExpand"
+                 FontSize="20"
+                 FontAttributes="Bold">Estado</Label>
+        </StackLayout>
+        <StackLayout Padding="12">
+            <Label x:Name="error" Text="{Binding mensaje}"/>
+
+            <ListView
+                x:Name="lstAlertas"
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label 
+                                HorizontalOptions="FillAndExpand"
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                Text="{Binding id_valvula}"/>
+                                <Label
+                                HorizontalOptions="FillAndExpand"
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                Text="{Binding caudal_v}"/>
+                                <Label 
+                                HorizontalOptions="FillAndExpand"
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                Text="{Binding estado_v}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </StackLayout>
+    </StackLayout> 
+</ContentPage>

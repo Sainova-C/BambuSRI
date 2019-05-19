@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bambu.ProgramarRiego"
+             Title="Programar Riego">
+    <StackLayout Padding="12">
+        <StackLayout Orientation="Vertical">
+            <!--FORMULARIO DE REGISTRO DE PROGRAMACION DE RIEGO-->
+            <StackLayout Orientation="Horizontal">
+                <Label 
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Hora inicio"/>
+                <Label 
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Hora Finalizacion"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Picker x:Name="H_ini"
+                        Title="Hora Inicio"
+                        HorizontalOptions="FillAndExpand"
+                        >
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>01:00</x:String>
+                            <x:String>02:00</x:String>
+                            <x:String>03:00</x:String>
+                            <x:String>04:00</x:String>
+                            <x:String>05:00</x:String>
+                            <x:String>06:00</x:String>
+                            <x:String>07:00</x:String>
+                            <x:String>08:00</x:String>
+                            <x:String>09:00</x:String>
+                            <x:String>10:00</x:String>
+                            <x:String>11:00</x:String>
+                            <x:String>12:00</x:String>
+                            <x:String>13:00</x:String>
+                            <x:String>14:00</x:String>
+                            <x:String>15:00</x:String>
+                            <x:String>16:00</x:String>
+                            <x:String>17:00</x:String>
+                            <x:String>18:00</x:String>
+                            <x:String>19:00</x:String>
+                            <x:String>20:00</x:String>
+                            <x:String>21:00</x:String>
+                            <x:String>22:00</x:String>
+                            <x:String>23:00</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker x:Name="H_fin"
+                        Title="Hora Finalizacion"
+                        HorizontalOptions="FillAndExpand"
+                        >
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>01:00</x:String>
+                            <x:String>02:00</x:String>
+                            <x:String>03:00</x:String>
+                            <x:String>04:00</x:String>
+                            <x:String>05:00</x:String>
+                            <x:String>06:00</x:String>
+                            <x:String>07:00</x:String>
+                            <x:String>08:00</x:String>
+                            <x:String>09:00</x:String>
+                            <x:String>10:00</x:String>
+                            <x:String>11:00</x:String>
+                            <x:String>12:00</x:String>
+                            <x:String>13:00</x:String>
+                            <x:String>14:00</x:String>
+                            <x:String>15:00</x:String>
+                            <x:String>16:00</x:String>
+                            <x:String>17:00</x:String>
+                            <x:String>18:00</x:String>
+                            <x:String>19:00</x:String>
+                            <x:String>20:00</x:String>
+                            <x:String>21:00</x:String>
+                            <x:String>22:00</x:String>
+                            <x:String>23:00</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </StackLayout>
+            <StackLayout 
+                Orientation="Vertical">
+                <Label
+                    FontAttributes="Bold"
+                    Text="Dia para la alarma"/>
+                <StackLayout Orientation="Horizontal">
+                    <Picker x:Name="Dia"
+                        Title="Dia Apliacion"
+                        HorizontalOptions="FillAndExpand"
+                        >
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Domingo</x:String>
+                                <x:String>Lunes</x:String>
+                                <x:String>Martes</x:String>
+                                <x:String>Miercoles</x:String>
+                                <x:String>Jueves</x:String>
+                                <x:String>Viernes</x:String>
+                                <x:String>Sabado</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <Button 
+                        Text="Agregar"
+                        TextColor="White"
+                        BackgroundColor="Green"
+                        BorderRadius="20"
+                        HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+        <!--LISTADO DE DATOS EN ESTE STACK-->
+            <StackLayout Padding="12">
+                <Label x:Name="error" Text="{Binding mensaje}"/>
+            <ScrollView>
+                <ListView
+                x:Name="lstProgramacion"
+                >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label
+                                    HorizontalOptions="FillAndExpand"
+                                    FontAttributes="Bold"
+                                    FontSize="20"
+                                    Text="{Binding HoraIni}"/>
+                                    <Label
+                                    HorizontalOptions="FillAndExpand"
+                                    FontAttributes="Bold"
+                                    FontSize="20"
+                                    Text="{Binding HoraFin}"/>
+                                    <Label
+                                    HorizontalOptions="FillAndExpand"
+                                    FontAttributes="Bold"
+                                    FontSize="20"
+                                    Text="{Binding Dia}"/>
+                                    <Button
+                                    Text="Quitar"
+                                    BackgroundColor="SaddleBrown"
+                                    BorderRadius="25"
+                                    HorizontalOptions="EndAndExpand"
+                                    TextColor="White"
+                                    x:Name="btnQuitar"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </ScrollView>            
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
